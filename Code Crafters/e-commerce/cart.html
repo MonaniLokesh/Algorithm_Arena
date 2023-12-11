@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Cart</title>
+</head>
+<body style="margin: 0 100px">
+    <h1>Shopping Cart</h1>
+    <div id="cart-items"></div>
+    <h3>Total Amount: ₹<span id="total-amount"></span></h3>
+    <button>Pay Amount</button>
+
+    <script>
+        // Retrieve cart items from localStorage
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Display cart items and calculate total amount
+        var cartItemsContainer = document.getElementById('cart-items');
+        var totalAmountSpan = document.getElementById('total-amount');
+        var totalAmount = 0;
+
+        cart.forEach(function (item) {
+            var itemElement = document.createElement('div');
+            itemElement.innerHTML = `<p>${item.name} - ₹${item.price}</p>`;
+            cartItemsContainer.appendChild(itemElement);
+
+            // Add the price of each item to the total amount
+            totalAmount += parseFloat(item.price);
+        });
+
+        // Display the total amount on the page
+        totalAmountSpan.textContent = totalAmount.toFixed(2);
+    </script>
+</body>
+</html>

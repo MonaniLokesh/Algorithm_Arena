@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title> Clothing Store</title>
+</head>
+<body>
+    <header>
+        <h1>Code Crafters</h1>
+        <nav>
+            <ul>
+                <li><a href="./ecom.html">Home</a></li>
+                <li><a href="./cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <section class="product-list">
+        <div class="product" id="product1">
+            <img src="./images/pent 1.jpeg" alt="Product 1">
+            <h2>Adiddas Pent</h2>
+            <p>Men</p>
+            ₹<span>2999</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product1')">Add to Cart</button>
+        </div>
+        <div class="product" id="product2">
+            <img src="./images/img 2.jpeg" alt="Product 1">
+            <h2>Track Suit</h2>
+            <p>Women</p>
+            ₹<span>7999</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product2')">Add to Cart</button>
+        </div>
+        <div class="product" id="product3">
+            <img src="./images/img 3.jpeg" alt="Product 1">
+            <h2>Pent & t-shirt</h2>
+            <p>Men & Women</p>
+            ₹<span>1999</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product3')">Add to Cart</button>
+        </div>
+        <div class="product" id="product4">
+            <img src="./images/girl cloth.jpeg" alt="Product 1">
+            <h2>Adiddas Track Suit</h2>
+            <p>Women</p>
+            ₹<span>999</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product4')">Add to Cart</button>
+        </div>
+        <div class="product" id="product5">
+            <img src="./images/img 5.jpeg" alt="Product 1">
+            <h2>T- Shirt</h2>
+            <p>Children</p>
+            ₹<span>12500</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product5')">Add to Cart</button>
+        </div>
+        <div class="product" id="product6">
+            <img src="./images/shirt 1.jpeg" alt="Product 1">
+            <h2>Gown</h2>
+            <p>Women</p>
+            ₹<span>15000</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product6')">Add to Cart</button>
+        </div>
+        <div class="product" id="product7">
+            <img src="./images/images 6.jpeg" alt="Product 1">
+            <h2>Trending Combo</h2>
+            <p>Men</p>
+            ₹<span>10000</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product7')">Add to Cart</button>
+        </div>
+        <div class="product" id="product8">
+            <img src="./images/images 7.jpeg" alt="Product 1">
+            <h2>Trouser</h2>
+            <p>Men</p>
+            ₹<span>20000</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product8')">Add to Cart</button>
+        </div>
+        <div class="product" id="product9">
+            <img src="./images/images 8.jpeg" alt="Product 1">
+            <h2>Shrug</h2>
+            <p>Women</p>
+            ₹<span>11000</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product9')">Add to Cart</button>
+        </div>
+        <div class="product" id="product10">
+            <img src="./images/images 9.jpeg" alt="Product 1">
+            <h2>Pent Shirt</h2>
+            <p>Women</p>
+            ₹<span>12000</span>
+            <br/><button class="add-to-cart" onclick="addToCart('product10')">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 E-Commerce Clothing Store. All rights reserved.</p>
+    </footer>
+    <script>
+        function addToCart(productId) {
+            // Get the product details
+            var productName = document.getElementById(productId).querySelector('h2').innerText;
+            var productPrice = document.getElementById(productId).querySelector('span').innerText;
+    
+            // Save the product details to localStorage
+            var cartItem = {
+                name: productName,
+                price: productPrice
+            };
+    
+            // Check if cart already exists in localStorage
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Add the new item to the cart
+            cart.push(cartItem);
+    
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Redirect to another page (cart page in this case)
+            window.location.href = 'cart.html';
+        }
+    </script>
+</body>
+</html>
