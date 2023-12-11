@@ -1,85 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GITS Canteen</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Roboto&display=swap");
 
-<head>
-   <title>Shopping Cart</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-   <link href="style.css" rel="stylesheet">
-</head>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-<body>
+    body {
+      /* background-color: rgb(2, 2, 47); */
+      background-color: rgb(253, 205, 146);
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      height: 100px;
+    }
 
-   <section>
-      <div class="container">
-         <h2 class="px-5 p-2 head">My shopping cart</h2>
-         <div class="cart">
-            <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item">
-                        <img src="images\4.jpg" alt="">
-                        <h5>Nike New airmac black edition</h5>
-                     </div>
+    nav {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 50px;
+      /* background-color: rgb(2, 2, 36); */
+      background-color: rgb(251, 166, 62);
+    }
 
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button id="phone-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="phone-number" type="number" min="0" class="form-control text-center" value="1">
-                           <button id="phone-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <h5>$ <span id="phone-total">1219</span> </h5>
-                        
-                     </div>
-                  </div>
-               </div>
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
 
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item mx-auto">
-                        <img src="images\2.jpg" alt="">
-                        <h5>Nike New airmac red edition</h5>
-                     </div>
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button id="case-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="case-number" type="number" min="0" class="form-control text-center" value="1">
-                           <button  id="case-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+    nav ul li {
+      list-style: none;
+      margin: 0 25px;
+    }
 
-                        </div>
-                        <h5>$ <span id="case-total">59</span> </h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
-                     </div>
-                  </div>
-               </div>
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
 
-               <div class="cart-item">
-                  <div class="row g-2">
+    nav ul li a:hover {
+      font-size: 1.01rem;
+      color: rgb(255, 255, 255);
+    }
 
-                     <div class="col-6">
-                        <h5>Subtotal: </h5>
-                        <h5>Tax:</h5>
-                        <h5>Total:</h5>
-                     </div>
+    .left {
+      font-weight: 600;
+      font-size: 30px;
+    }
 
-                     <div class="col-6 status">
-                        <h5>$<span id="sub-total">1,278</span></h5>
-                        <h5>$<span id="tax-amount">0</span></h5>
-                        <h5>$<span id="total-price">1,278</span></h5>
-                     </div>
-                     
-                  </div>
-               </div>
-               <div class="col-md-12 pt-4 pb-4">
-                 <a href="/index.html"> <button type="button" class="btn btn-success check-out">Back to home</button></a>
-               </div>
-            </div>
-         </div>
+    .img1 {
+      filter: invert(1);
+    }
+
+    .img1 img {
+      padding: 10px;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-image: url("https://media.istockphoto.com/id/1191080960/photo/traditional-turkish-breakfast-and-people-taking-various-food-wide-composition.jpg?s=612x612&w=0&k=20&c=PP5ejMisEwzcLWrNmJ8iPPm_u-4P6rOWHEDpBPL2n7Q=");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size:cover; */
+      border-radius: 7px;
+      margin: 10px;
+    }
+
+    .main {
+      height: 55vh;
+    }
+
+    .main img {
+      padding: 10px;
+      filter: blur(2.6px);
+      width: 85vw;
+    }
+
+    .main h1 {
+      position: relative;
+      font-size: 3.5rem;
+      top: -450px;
+      left: 100px;
+    }
+
+    .main button {
+      position: relative;
+      top: -450px;
+      left: 100px;
+    }
+
+    .btn{
+      border: 1px solid white;
+      background-color: rgb(255, 187, 0);
+      border-radius: 10px;
+      padding: 10px 40px;
+      margin: 10px;
+    }
+
+    footer {
+        margin-top: 50vh;
+        background-color: rgb(251, 166, 62);
+      }
+
+      .footer {
+        display: flex;
+        padding: 4vh 50%;
+        justify-content: space-evenly;
+      }
+
+      footer ul {
+        list-style: none;
+      }
+
+      footer > div {
+        width: 0;
+      }
+
+      footer .footer span{
+        align-content: center;
+      }
+
+      section{
+        height: 10vh;
+      }
+
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="left">GITS Canteen</div>
+        <div class="right">
+          <ul>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Place Order</a></li>
+            <li><a href="#">Food Items</a></li>
+          </ul>
+        </div>
+        <div class="img1">
+          <img src="search.svg" alt="Search" />
+          <img src="saved.svg" alt="Search" />
+          <img src="profile.svg" alt="Search" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="main">
+        <img
+          src="https://media.istockphoto.com/id/1191080960/photo/traditional-turkish-breakfast-and-people-taking-various-food-wide-composition.jpg?s=612x612&w=0&k=20&c=PP5ejMisEwzcLWrNmJ8iPPm_u-4P6rOWHEDpBPL2n7Q="
+          alt=""
+        />
+        <h1>Special Offer</h1>
+        <button class="btn">Offers</button>
       </div>
-   </section>
-   <script src="app.js"></script>
-</body>
+    </main>
+
+    <section class="sec">
+
+    </section>
+    
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Footer Section</h3>
+        </div>
+        <div class="footer-second">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contacts</li>
+          </ul>
+        </div>
+        <div class="footer-third">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contacts</li>
+          </ul>
+        </div>
+        <div class="footer-fourth">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contacts</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
